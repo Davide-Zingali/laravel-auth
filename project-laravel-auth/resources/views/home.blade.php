@@ -35,6 +35,13 @@
                     </form>
                 </div>
             </div>
+
+            <div class="card padd">
+                <h3>Foto Profilo selezionata</h3>
+                <div>
+                    <img src="{{asset ('storage/icons/' . Auth::user() -> stringaIcona)}}" alt="">
+                </div>
+            </div>
         </div>
     </div>
 </div>
