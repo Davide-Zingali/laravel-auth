@@ -17,6 +17,24 @@
                     {{ __('You are logged in!') }}
                 </div>
             </div>
+            <br>
+            <div class="card padd">
+                <h3>Inserisci foto profilo</h3>
+                <div>
+                    <form action="{{route('icon-user')}}" method="post" enctype="multipart/form-data">
+
+                        @csrf
+                        @method('post')
+
+                        <label for="stringaIcon"></label>
+                        <input type="file" name="stringaIcon">
+                        <br>
+                        <br>
+                        <input type="submit">
+
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
