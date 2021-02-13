@@ -20,28 +20,39 @@
             <br>
             <div class="card padd">
                 <h3>Inserisci foto profilo</h3>
+
+{{-- --------------------------------------------------------------------------- --}}
+                
                 <div>
-                    <form action="{{route('icon-user')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('update-icon')}}" method="post" enctype="multipart/form-data">
 
                         @csrf
                         @method('post')
 
-                        <label for="stringaIcon"></label>
-                        <input type="file" name="stringaIcon">
+                        <label for="inputIcon"></label>
+                        <input type="file" name="inputIcon">
                         <br>
                         <br>
-                        <input type="submit">
+                        <input class="btn btn-primary" type="submit">
+                        <button class="btn btn-danger">
+                            <a href="{{route('clear-icon')}}">Elimina</a>
+                        </button>
 
                     </form>
                 </div>
             </div>
 
-            <div class="card padd">
-                <h3>Foto Profilo selezionata</h3>
-                <div>
-                    <img src="{{asset ('storage/icons/' . Auth::user() -> stringaIcona)}}" alt="">
-                </div>
-            </div>
+            {{-- condizione if che fa si che se il campo stringaIcon nel DB non esista (questo succede se non ha immagine profilo) allora non esegue il codice sotto --}}
+            @if (Auth::user() -> stringaIcona)
+                <div class="card padd">
+                    <h3>Foto Profilo selezionata</h3>
+                    <div>
+                        {{-- percorso dentro la cartella public, il nome viene preso dal DB --}}
+                        <img src="{{asset ('storage/icons/' . Auth::user() -> stringaIcona)}}" alt="">
+                    </div>
+                </div>    
+            @endif
+
         </div>
     </div>
 </div>

@@ -23,7 +23,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <img class="iconaa" src="{{asset('storage/imgs/icona-profilo.png')}}" alt="">
+                <img class="iconaa" src="{{asset('storage/imgs/icon-sito.png')}}" alt="">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
